@@ -22,6 +22,8 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+    .nav { display: flex; gap: 18px; color: #b8c0d9; font-weight: 700; }
+    .nav a:hover { color: #7dd3fc; }
     .hero { padding: 90px 8% 50px; text-align: center; }
     .badge { color: #7dd3fc; font-weight: bold; margin-bottom: 16px; }
     h1 { font-size: 56px; margin: 0; line-height: 1.05; }
@@ -81,7 +83,10 @@
 <body>
   <header>
     <a class="logo" href="index.html">ZYRANEXT AI</a>
-    <div>AI Tools Directory</div>
+    <nav class="nav">
+      <a href="tools.html">AI Tools</a>
+      <a href="#articles">Articles</a>
+    </nav>
   </header>
 
   <section class="hero">
@@ -92,6 +97,14 @@
       <input id="searchInput" type="text" placeholder="Search tools, categories, or articles... e.g. video, ChatGPT, coding" autocomplete="off" />
       <div id="searchResults"></div>
     </div>
+  </section>
+
+  <section class="section">
+    <a class="card" href="tools.html" style="display:block; text-align:center; border-color:#3b82f6;">
+      <span class="pill">New</span>
+      <h2 style="margin:0 0 10px;">Browse AI Tools Directory</h2>
+      <p>Explore popular AI tools like ChatGPT, Claude, Midjourney, Runway, CapCut, Canva, Notion AI, and more.</p>
+    </a>
   </section>
 
   <section class="section">
@@ -106,7 +119,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="articles">
     <h2>Latest Articles</h2>
     <div class="grid" id="articleGrid"></div>
   </section>
@@ -115,6 +128,7 @@
 
   <script>
     const articles = [
+      { title: "AI Tools Directory", url: "tools.html", category: "AI Tools", description: "Browse popular AI tools for writing, video, image generation, coding, productivity, design, and marketing.", keywords: "tools directory chatgpt claude midjourney runway capcut descript canva notion ai firefly cursor copilot" },
       { title: "Best AI Video Editors in 2026", url: "best-ai-video-editors-2026.html", category: "AI Video", description: "Compare CapCut, Descript, Runway, Synthesia, and Pictory for video editing, captions, clips, and AI video generation.", keywords: "video editor editing captions subtitles clips shorts reels youtube tiktok capcut descript runway synthesia pictory" },
       { title: "Best AI Image Generators in 2026", url: "best-ai-image-generators-2026.html", category: "AI Image", description: "Compare Midjourney, ChatGPT Image Generation, Adobe Firefly, Ideogram, and Leonardo AI for image creation.", keywords: "image generator images art design logo thumbnail midjourney chatgpt adobe firefly ideogram leonardo" },
       { title: "Best AI Writing Tools in 2026", url: "best-ai-writing-tools-2026.html", category: "AI Writing", description: "Compare ChatGPT, Claude, Jasper, Copy.ai, and Writesonic for blogs, emails, copywriting, and SEO writing.", keywords: "writing writer blog seo email copywriting chatgpt claude jasper copy ai writesonic" },

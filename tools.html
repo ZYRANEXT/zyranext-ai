@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tools Directory | ZYRANEXT AI</title>
+  <meta name="description" content="Browse popular AI tools for writing, video editing, image generation, coding, productivity, design, marketing, and more." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #080b14; color: #f5f7ff; }
+    a { color: inherit; text-decoration: none; }
+    header { padding: 28px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+    .nav { display: flex; gap: 18px; color: #b8c0d9; font-weight: 700; }
+    .nav a:hover { color: #7dd3fc; }
+    .hero { padding: 70px 8% 35px; text-align: center; }
+    .badge { color: #7dd3fc; font-weight: bold; margin-bottom: 16px; }
+    h1 { font-size: 52px; margin: 0; line-height: 1.05; }
+    .hero p { color: #b8c0d9; font-size: 18px; max-width: 760px; margin: 22px auto; line-height: 1.6; }
+    .search-wrap { max-width: 720px; margin: 28px auto 0; }
+    #toolSearch { width: 100%; padding: 18px 22px; border-radius: 999px; border: 1px solid #26304a; background: #111827; color: white; font-size: 16px; outline: none; }
+    .section { padding: 35px 8%; }
+    .section h2 { font-size: 30px; margin-bottom: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+    .tool-card { display: flex; flex-direction: column; gap: 12px; background: linear-gradient(180deg, #121827, #0d1220); border: 1px solid #26304a; border-radius: 20px; padding: 24px; transition: transform .15s ease, border-color .15s ease; }
+    .tool-card:hover { transform: translateY(-3px); border-color: #3b82f6; }
+    .tool-card h3 { margin: 0; font-size: 22px; }
+    .tool-card p { color: #aeb8d4; line-height: 1.6; margin: 0; }
+    .meta { color: #7dd3fc; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+    .btn { display: inline-block; padding: 10px 14px; border-radius: 999px; border: 1px solid #26304a; background: #111827; font-weight: 800; font-size: 14px; }
+    .btn:hover { border-color: #7dd3fc; }
+    .note { color: #7b849e; font-size: 14px; line-height: 1.6; }
+    footer { padding: 40px 8%; color: #7b849e; text-align: center; }
+    @media (max-width: 700px) { h1 { font-size: 36px; } header { flex-direction: column; gap: 12px; } .nav { flex-wrap: wrap; justify-content: center; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">ZYRANEXT AI</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">AI Tools</a>
+      <a href="index.html#articles">Articles</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">AI Tools Directory</div>
+    <h1>Browse Popular AI Tools</h1>
+    <p>Find AI tools for writing, video editing, image generation, coding, productivity, design, marketing, and creator workflows.</p>
+    <div class="search-wrap">
+      <input id="toolSearch" type="text" placeholder="Search tools... e.g. ChatGPT, video, image, coding, SEO" autocomplete="off" />
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Featured Tools</h2>
+    <div class="grid" id="toolsGrid"></div>
+    <p class="note">Note: Tool availability, features, and pricing can change. Always check the official website before purchasing.</p>
+  </section>
+
+  <footer>© 2026 ZYRANEXT AI. Discover better tools, faster.</footer>
+
+  <script>
+    const tools = [
+      { name: "ChatGPT", category: "Writing / Productivity / Image", desc: "A general-purpose AI assistant for writing, research, brainstorming, coding help, planning, and image generation.", url: "https://chatgpt.com/", keywords: "chatgpt writing productivity research image coding assistant" },
+      { name: "Claude", category: "Writing / Research / Coding", desc: "A strong AI assistant for long-form writing, analysis, coding support, summaries, and document-heavy work.", url: "https://claude.ai/", keywords: "claude writing research coding document summary assistant" },
+      { name: "Midjourney", category: "AI Image", desc: "An AI image generator known for high-quality artistic, cinematic, and concept-style visuals.", url: "https://www.midjourney.com/", keywords: "midjourney image generator art design concept thumbnail" },
+      { name: "Adobe Firefly", category: "AI Image / Design", desc: "A design-focused AI image tool made for creative workflows, commercial design, and Adobe users.", url: "https://firefly.adobe.com/", keywords: "adobe firefly image design commercial photoshop" },
+      { name: "Ideogram", category: "AI Image / Text Design", desc: "Useful for creating posters, logos, quote graphics, and images with readable text.", url: "https://ideogram.ai/", keywords: "ideogram image text logo poster typography" },
+      { name: "Leonardo AI", category: "AI Image / Creator", desc: "A creative AI image platform for creators, game assets, visual concepts, and brand-style images.", url: "https://leonardo.ai/", keywords: "leonardo ai image creator game assets design" },
+      { name: "Runway", category: "AI Video", desc: "AI video generation and editing tools for creative visuals, background removal, effects, and motion content.", url: "https://runwayml.com/", keywords: "runway video generation editing effects background" },
+      { name: "CapCut", category: "AI Video / Short-form", desc: "A creator-friendly video editor for TikTok, Reels, Shorts, captions, templates, and quick social videos.", url: "https://www.capcut.com/", keywords: "capcut video editor tiktok reels shorts captions subtitles" },
+      { name: "Descript", category: "AI Video / Audio", desc: "Edit videos and podcasts by editing text. Useful for interviews, tutorials, podcasts, and talking-head videos.", url: "https://www.descript.com/", keywords: "descript video audio podcast transcript editing" },
+      { name: "Synthesia", category: "AI Video / Business", desc: "AI avatar video creation for training, onboarding, explainer videos, and business presentations.", url: "https://www.synthesia.io/", keywords: "synthesia avatar business training video" },
+      { name: "Pictory", category: "AI Video / Repurposing", desc: "Turns scripts, blog posts, and long-form content into shorter videos for marketing and social media.", url: "https://pictory.ai/", keywords: "pictory video script blog repurpose marketing" },
+      { name: "GitHub Copilot", category: "AI Coding", desc: "An AI coding assistant for code completion, suggestions, and developer workflows inside popular editors.", url: "https://github.com/features/copilot", keywords: "github copilot coding code developer autocomplete" },
+      { name: "Cursor", category: "AI Coding", desc: "An AI-powered code editor for building, editing, debugging, and understanding code faster.", url: "https://cursor.com/", keywords: "cursor coding editor ai developer app" },
+      { name: "Windsurf", category: "AI Coding", desc: "An AI coding environment designed to help developers build and edit projects with AI assistance.", url: "https://windsurf.com/", keywords: "windsurf coding editor ai developer" },
+      { name: "Notion AI", category: "Productivity / Notes", desc: "AI inside Notion for notes, docs, summaries, planning, writing, and team knowledge management.", url: "https://www.notion.com/product/ai", keywords: "notion ai notes productivity docs summary" },
+      { name: "Canva", category: "Design / Marketing", desc: "A design platform with AI features for social posts, presentations, thumbnails, graphics, and brand content.", url: "https://www.canva.com/", keywords: "canva design marketing social posts presentation thumbnail" },
+      { name: "Surfer SEO", category: "AI SEO / Marketing", desc: "A content optimization tool for SEO writing, keyword planning, and improving article structure.", url: "https://surferseo.com/", keywords: "surfer seo marketing content optimization keyword" },
+      { name: "Jasper", category: "AI Writing / Marketing", desc: "AI writing software for marketing copy, brand content, campaigns, blogs, and business writing.", url: "https://www.jasper.ai/", keywords: "jasper writing marketing copy brand blog" },
+      { name: "Copy.ai", category: "AI Writing / Sales", desc: "AI writing and workflow tools for sales copy, marketing content, email, and business automation.", url: "https://www.copy.ai/", keywords: "copy ai writing sales marketing email" },
+      { name: "HubSpot AI", category: "Marketing / CRM", desc: "AI features for marketing, sales, CRM, content creation, and customer workflows inside HubSpot.", url: "https://www.hubspot.com/artificial-intelligence", keywords: "hubspot ai crm marketing sales content" }
+    ];
+
+    const grid = document.getElementById('toolsGrid');
+    const input = document.getElementById('toolSearch');
+
+    function renderTools(list) {
+      grid.innerHTML = list.map(tool => `
+        <article class="tool-card">
+          <div class="meta">${tool.category}</div>
+          <h3>${tool.name}</h3>
+          <p>${tool.desc}</p>
+          <div class="btn-row">
+            <a class="btn" href="${tool.url}" target="_blank" rel="noopener noreferrer">Visit Tool</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterTools() {
+      const q = input.value.trim().toLowerCase();
+      if (!q) return renderTools(tools);
+      const results = tools.filter(tool => `${tool.name} ${tool.category} ${tool.desc} ${tool.keywords}`.toLowerCase().includes(q));
+      grid.innerHTML = results.length ? '' : '<p class="note">No tools found. Try keywords like video, image, writing, coding, SEO, or ChatGPT.</p>';
+      if (results.length) renderTools(results);
+    }
+
+    renderTools(tools);
+    input.addEventListener('input', filterTools);
+  </script>
+</body>
+</html>
