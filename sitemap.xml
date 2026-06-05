@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset x  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/notion-ai.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/zapier-ai.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/canva-ai.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/ideogram.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/leonardo-ai.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/capcut.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/descript.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/suno.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/udio.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zyranext-ai.onrender.com/tool/elevenlabs.html</loc>
+    <priority>0.8</priority>
+  </url>mlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://zyranext-ai.onrender.com/</loc>
